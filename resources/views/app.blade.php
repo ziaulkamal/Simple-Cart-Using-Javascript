@@ -262,8 +262,8 @@
         });
 
     </script>
-
-    @include('cart')
+    <script src="{{ asset('assets/js/cart-function.js') }}" type="text/javascript"></script>
+    {{-- @include('cart') --}}
 
 
 

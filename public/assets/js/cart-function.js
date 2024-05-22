@@ -1,5 +1,4 @@
-<script>
-            $(document).ready(function () {
+ $(document).ready(function () {
             let instanceCart1; // Variable to store the chart instance
             let instanceCart2; // Variable to store the chart instance
             let instanceCart3; // Variable to store the chart instance
@@ -35,7 +34,7 @@
 
             function loadChartData(year, jenjang, fakultas, prodi) {
                 $.ajax({
-                    url: `{{ route('mhs.data') }}`,
+                    url: `/mahasiswa/data`,
                     method: 'GET',
                     data: {
                         angkatan: year,
@@ -497,5 +496,3 @@
                 loadChartData(year, jenjang, fakultas, prodi);
             });
         });
-
-</script>
