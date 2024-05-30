@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\DefaultController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\PengajarController;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 /*
@@ -16,9 +20,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [DefaultController::class, 'index'])->name('mahasiswa.index');
-Route::get('/filter', [DefaultController::class, 'filter'])->name('fill');
-Route::get('/jj/{value}', [DefaultController::class, 'optJenjang'])->name('jj');
-Route::get('/fk/{value}', [DefaultController::class, 'optFakultas'])->name('fk');
-Route::get('/dynamic', [DefaultController::class, 'dynamicOpt'])->name('dynamic');
-Route::get('/mahasiswa/data', [DefaultController::class, 'getData'])->name('mhs.data');
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+
+Route::get('/filter', [MahasiswaController::class, 'filter'])->name('fill');
+Route::get('/jj/{value}', [MahasiswaController::class, 'optJenjang'])->name('jj');
+Route::get('/fk/{value}', [MahasiswaController::class, 'optFakultas'])->name('fk');
+Route::get('/dynamic', [MahasiswaController::class, 'dynamicOpt'])->name('dynamic');
+Route::get('/mahasiswa/data', [MahasiswaController::class, 'getData'])->name('mhs.data');
+
+Route::get('/pengajar', [PengajarController::class, 'index']);
+Route::get('/pengajar/filter', [PengajarController::class, 'filter'])->name('filter.pengajar');
+

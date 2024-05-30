@@ -6,7 +6,7 @@ use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DefaultController extends Controller
+class MahasiswaController extends Controller
 {
     public function index()
     {
@@ -15,7 +15,7 @@ class DefaultController extends Controller
         $fakultas = Mahasiswa::getUniqueValues('fakultas_mhs');
         $prodi = Mahasiswa::getUniqueValues('prodi_mhs');
 
-        return view('app', compact('angkatan'));
+        return view('mahasiswa', compact('angkatan'));
     }
 
     public function filter(Request $request)

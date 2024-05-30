@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2024 at 12:15 PM
+-- Generation Time: May 29, 2024 at 09:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -9275,6 +9275,95 @@ INSERT INTO `mahasiswa_lulusan` (`id_mhs`, `npm_mhs`, `nama_mhs`, `kelamin_mhs`,
 (7488, '1604101010136', 'FADHLUL KHALIQ', 'L', 'S1', 'Teknik', 'Teknik Sipil', 'UMB', '2016', '3.2', 'DKI Jakarta', 'KOTA JAKARTA SELATAN', 'SMA INTERNATIONAL ISLAMIC HIGH SCHOOL'),
 (7489, '1904101010144', 'AZZAHRA SABRINA', 'P', 'S1', 'Teknik', 'Teknik Sipil', 'UMB', '2019', '3.5', 'Jawa Barat', 'KOTA DEPOK', 'SMA PUTRA BANGSA');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mata_kuliah`
+--
+
+CREATE TABLE `mata_kuliah` (
+  `id_mk` int(11) NOT NULL,
+  `prodi_mk` varchar(50) NOT NULL,
+  `semester_mk` varchar(10) DEFAULT NULL,
+  `kode_mk` varchar(10) DEFAULT NULL,
+  `mk` varchar(255) DEFAULT NULL,
+  `sks_mk` int(11) DEFAULT NULL,
+  `kpl_mk` varchar(10) DEFAULT NULL,
+  `kategori_mk` char(1) DEFAULT NULL,
+  `prasyarat_mk` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mata_kuliah`
+--
+
+INSERT INTO `mata_kuliah` (`id_mk`, `prodi_mk`, `semester_mk`, `kode_mk`, `mk`, `sks_mk`, `kpl_mk`, `kategori_mk`, `prasyarat_mk`) VALUES
+(1, 'D3-AKUNTANSI', 'Semester 1', 'EBV101', 'PENGANTAR EKONOMI', 3, '3 (2-1-0)', 'W', NULL),
+(2, 'D3-AKUNTANSI', 'Semester 1', 'MKS201', 'BAHASA INGGRIS', 2, '2 (2-0-0)', 'W', NULL),
+(3, 'D3-AKUNTANSI', 'Semester 1', 'MKS107', 'PEMBINAAN KARAKTER I', 0, '0 (0-0-0)', 'W', NULL),
+(4, 'D3-AKUNTANSI', 'Semester 1', 'MKS101', 'BAHASA INDONESIA', 2, '2 (2-0-0)', 'W', NULL),
+(5, 'D3-AKUNTANSI', 'Semester 1', 'EBV109', 'PRAKTIKUM APLIKASI KOMPUTER', 3, '3 (0-3-0)', 'W', NULL),
+(6, 'D3-AKUNTANSI', 'Semester 1', 'EBV107', 'MATEMATIKA KEUANGAN DAN BISNIS', 3, '3 (1-2-0)', 'W', NULL),
+(7, 'D3-AKUNTANSI', 'Semester 1', 'EBV102', 'PENGANTAR MANAJEMEN', 3, '3 (2-1-0)', 'W', NULL),
+(8, 'D3-AKUNTANSI', 'Semester 1', 'EBV105', 'PENGANTAR AKUNTANSI I', 3, '3 (1-2-0)', 'W', NULL),
+(9, 'D3-AKUNTANSI', 'Semester 2', 'VEA114', 'BISNIS DIGITAL', 3, '3 (2-1-0)', 'W', NULL),
+(10, 'D3-AKUNTANSI', 'Semester 2', 'VEA112', 'HUKUM BISNIS DAN ETIKA PROFESI', 2, '2 (2-0-0)', 'W', NULL),
+(11, 'D3-AKUNTANSI', 'Semester 2', 'VEA108', 'PRAKTIKUM PENGANTAR AKUNTANSI', 3, '3 (0-3-0)', 'W', 'EBV105'),
+(12, 'D3-AKUNTANSI', 'Semester 2', 'VEA207', 'PERPAJAKAN I', 3, '3 (2-1-0)', 'W', NULL),
+(13, 'D3-AKUNTANSI', 'Semester 2', 'MKS202', 'PEMBINAAN KARAKTER II', 0, '0 (0-0-0)', 'W', NULL),
+(14, 'D3-AKUNTANSI', 'Semester 2', 'VEA207', 'BANK DAN LEMBAGA KEUANGAN LAINNYA', 3, '3 (2-1-0)', 'W', NULL),
+(15, 'D3-AKUNTANSI', 'Semester 2', 'MKS103', 'PENDIDIKAN PANCASILA DAN KEWARGANEGARAAN', 3, '3 (2-1-0)', 'W', NULL),
+(16, 'D3-AKUNTANSI', 'Semester 2', 'EBV106', 'STATISTIK DESKRIPTIF', 3, '3 (1-2-0)', 'W', NULL),
+(17, 'D3-AKUNTANSI', 'Semester 2', 'EBV111', 'ENGLISH FOR SPECIAL PURPOSE', 3, '3 (1-2-0)', 'W', 'MKS201'),
+(18, 'D3-AKUNTANSI', 'Semester 3', 'EBV201', 'PENGANTAR EKONOMI II', 3, '3 (2-1-0)', 'W', 'EBV101'),
+(19, 'D3-AKUNTANSI', 'Semester 3', 'MKS203', 'BAHASA INGGRIS II', 2, '2 (2-0-0)', 'W', 'MKS201'),
+(20, 'D3-AKUNTANSI', 'Semester 3', 'MKS207', 'PEMBINAAN KARAKTER III', 0, '0 (0-0-0)', 'W', 'MKS202'),
+(21, 'D3-AKUNTANSI', 'Semester 3', 'MKS205', 'BAHASA INDONESIA II', 2, '2 (2-0-0)', 'W', 'MKS101'),
+(22, 'D3-AKUNTANSI', 'Semester 3', 'EBV209', 'PRAKTIKUM APLIKASI KOMPUTER II', 3, '3 (0-3-0)', 'W', 'EBV109'),
+(23, 'D3-AKUNTANSI', 'Semester 3', 'EBV207', 'MATEMATIKA KEUANGAN DAN BISNIS II', 3, '3 (1-2-0)', 'W', 'EBV107'),
+(24, 'D3-AKUNTANSI', 'Semester 3', 'EBV202', 'PENGANTAR MANAJEMEN II', 3, '3 (2-1-0)', 'W', 'EBV102'),
+(25, 'D3-AKUNTANSI', 'Semester 3', 'EBV205', 'PENGANTAR AKUNTANSI II', 3, '3 (1-2-0)', 'W', 'EBV105'),
+(26, 'D3-AKUNTANSI', 'Semester 4', 'VEA214', 'BISNIS DIGITAL II', 3, '3 (2-1-0)', 'W', 'VEA114'),
+(27, 'D3-AKUNTANSI', 'Semester 4', 'VEA212', 'HUKUM BISNIS DAN ETIKA PROFESI II', 2, '2 (2-0-0)', 'W', 'VEA112'),
+(28, 'D3-AKUNTANSI', 'Semester 4', 'VEA208', 'PRAKTIKUM PENGANTAR AKUNTANSI II', 3, '3 (0-3-0)', 'W', 'VEA108'),
+(29, 'D3-AKUNTANSI', 'Semester 4', 'VEA307', 'PERPAJAKAN II', 3, '3 (2-1-0)', 'W', 'VEA207'),
+(30, 'D3-AKUNTANSI', 'Semester 4', 'MKS302', 'PEMBINAAN KARAKTER IV', 0, '0 (0-0-0)', 'W', 'MKS202'),
+(31, 'D3-AKUNTANSI', 'Semester 4', 'VEA307', 'BANK DAN LEMBAGA KEUANGAN LAINNYA II', 3, '3 (2-1-0)', 'W', 'VEA207'),
+(32, 'D3-AKUNTANSI', 'Semester 4', 'MKS303', 'PENDIDIKAN PANCASILA DAN KEWARGANEGARAAN II', 3, '3 (2-1-0)', 'W', 'MKS103'),
+(33, 'D3-AKUNTANSI', 'Semester 4', 'EBV206', 'STATISTIK DESKRIPTIF II', 3, '3 (1-2-0)', 'W', 'EBV106'),
+(34, 'D3-AKUNTANSI', 'Semester 5', 'EBV301', 'EKONOMI MIKRO', 3, '3 (2-1-0)', 'W', 'EBV201'),
+(35, 'D3-AKUNTANSI', 'Semester 5', 'MKS401', 'BAHASA INGGRIS III', 2, '2 (2-0-0)', 'W', 'MKS203'),
+(36, 'D3-AKUNTANSI', 'Semester 5', 'MKS307', 'PEMBINAAN KARAKTER V', 0, '0 (0-0-0)', 'W', 'MKS302'),
+(37, 'D3-AKUNTANSI', 'Semester 5', 'MKS305', 'BAHASA INDONESIA III', 2, '2 (2-0-0)', 'W', 'MKS205'),
+(38, 'D3-AKUNTANSI', 'Semester 5', 'EBV309', 'PRAKTIKUM APLIKASI KOMPUTER III', 3, '3 (0-3-0)', 'W', 'EBV209'),
+(39, 'D3-AKUNTANSI', 'Semester 5', 'EBV307', 'MATEMATIKA KEUANGAN DAN BISNIS III', 3, '3 (1-2-0)', 'W', 'EBV207'),
+(40, 'D3-AKUNTANSI', 'Semester 5', 'EBV302', 'MANAJEMEN STRATEGIS', 3, '3 (2-1-0)', 'W', 'EBV202'),
+(41, 'D3-AKUNTANSI', 'Semester 5', 'EBV305', 'AKUNTANSI KEUANGAN I', 3, '3 (1-2-0)', 'W', 'EBV205'),
+(42, 'D3-AKUNTANSI', 'Semester 6', 'VEA314', 'BISNIS DIGITAL III', 3, '3 (2-1-0)', 'W', 'VEA214'),
+(43, 'D3-AKUNTANSI', 'Semester 6', 'VEA312', 'HUKUM BISNIS DAN ETIKA PROFESI III', 2, '2 (2-0-0)', 'W', 'VEA212'),
+(44, 'D3-AKUNTANSI', 'Semester 6', 'VEA308', 'PRAKTIKUM AKUNTANSI LANJUT', 3, '3 (0-3-0)', 'W', 'VEA208'),
+(45, 'D3-AKUNTANSI', 'Semester 6', 'VEA407', 'PERPAJAKAN III', 3, '3 (2-1-0)', 'W', 'VEA307'),
+(46, 'D3-AKUNTANSI', 'Semester 6', 'MKS402', 'PEMBINAAN KARAKTER VI', 0, '0 (0-0-0)', 'W', 'MKS307'),
+(47, 'D3-AKUNTANSI', 'Semester 6', 'VEA407', 'BANK DAN LEMBAGA KEUANGAN LAINNYA III', 3, '3 (2-1-0)', 'W', 'VEA307'),
+(48, 'D3-AKUNTANSI', 'Semester 6', 'MKS403', 'PENDIDIKAN PANCASILA DAN KEWARGANEGARAAN III', 3, '3 (2-1-0)', 'W', 'MKS303'),
+(49, 'D3-AKUNTANSI', 'Semester 6', 'EBV306', 'STATISTIK INFERENSIAL', 3, '3 (1-2-0)', 'W', 'EBV206'),
+(50, 'DSAI', '1', 'MAI611', 'KECERDASAN BUATANARTIFICIAL INTELLIGENCE', 3, '3 (3-0-0)', 'W', ''),
+(51, 'DSAI', '1', 'MAI612', 'PEMROGRAMAN KOMPUTER UNTUK DATA SAINS DAN KECERDASAN BUATAN', 4, '4 (3-1-0)', 'W', ''),
+(52, 'DSAI', '1', 'MAI613', 'MANAJEMEN DAN PEMODELAN DATA', 3, '3 (3-0-0)', 'W', ''),
+(53, 'DSAI', '1', 'PPS601', 'METODOLOGI PENELITIAN', 2, '2 (2-0-0)', 'W', ''),
+(54, 'DSAI', '2', 'PPS603', 'STATISTIKA', 2, '2 (2-0-0)', 'W', ''),
+(55, 'DSAI', '2', 'MAI621', 'PEMBELAJARAN MESIN', 3, '3 (2-1-0)', 'W', ''),
+(56, 'DSAI', '2', 'MAI623', 'HCI DAN VISUALISASI INFORMASI', 3, '3 (2-1-0)', 'P', ''),
+(57, 'DSAI', '2', 'MAI624', 'PENGEMBANGAN PERANGKAT LUNAK DAN MANAJEMEN PROYEK', 3, '3 (2-1-0)', 'P', ''),
+(58, 'DSAI', '2', 'MAI625', 'SISTEM TERDISTRIBUSI', 3, '3 (2-1-0)', 'P', ''),
+(59, 'DSAI', '2', 'MAI622', 'VISI KOMPUTER', 3, '3 (3-0-0)', 'P', ''),
+(60, 'DSAI', '3', 'MAI711', 'SEMINAR', 3, '3 (3-0-0)', 'W', ''),
+(61, 'DSAI', '3', 'MAI712', 'KECERDASAN DAN ANALISA BISNIS', 3, '3 (3-0-0)', 'W', ''),
+(62, 'DSAI', '3', 'MAI714', 'LINGUISTIK KOMPUTASI', 3, '3 (3-0-0)', 'P', ''),
+(63, 'DSAI', '3', 'MAI715', 'ANALISIS JEJARING SOSIAL', 3, '3 (2-1-0)', 'P', ''),
+(64, 'DSAI', '3', 'MAI713', 'ANALISA DATA SPATIO-TEMPORAL', 3, '3 (2-1-0)', 'P', ''),
+(65, 'DSAI', '4', 'MPAPT1', 'TESIS', 6, '6 (0-6-0)', 'W', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -9298,6 +9387,12 @@ ALTER TABLE `mahasiswa_lulusan`
   ADD PRIMARY KEY (`id_mhs`);
 
 --
+-- Indexes for table `mata_kuliah`
+--
+ALTER TABLE `mata_kuliah`
+  ADD PRIMARY KEY (`id_mk`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -9318,6 +9413,12 @@ ALTER TABLE `dosen`
 --
 ALTER TABLE `mahasiswa_lulusan`
   MODIFY `id_mhs` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7490;
+
+--
+-- AUTO_INCREMENT for table `mata_kuliah`
+--
+ALTER TABLE `mata_kuliah`
+  MODIFY `id_mk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
