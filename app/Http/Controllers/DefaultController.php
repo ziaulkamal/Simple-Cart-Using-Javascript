@@ -48,7 +48,7 @@ class DefaultController extends Controller
         $prodi = $request->input('prodi', null);
 
         $query = Mahasiswa::select('*')
-                        ->where('angkatan_mhs', '<=', $year);
+                        ->where('angkatan_mhs', '<=', $year-1);
 
         if ($jenjang != null && $jenjang != 'all') {
             $query->where('jenjang_mhs', $jenjang);
