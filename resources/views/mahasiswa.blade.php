@@ -81,8 +81,10 @@
                             </div>
                             <div class="col-md-8 d-flex align-items-center justify-content-end">
                                 <ul class="menu">
+                                    <li><a href="{{ url('/') }}">Beranda</a></li>
                                     <li><a href="{{ url('mahasiswa') }}">Mahasiswa</a></li>
                                     <li><a href="{{ url('pengajar') }}">Pengajar Prodi</a></li>
+                                    <li><a href="{{ url('kurikulum') }}">Kurikulum</a></li>
                                     <li><a href="#">Riwayat</a></li>
                                 </ul>
                             </div>
